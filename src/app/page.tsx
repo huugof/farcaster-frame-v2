@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "fc:frame:button:1": "Say Hello",
     "fc:frame:button:1:action": "post",
     "fc:frame:post_url": `${process.env.NEXT_PUBLIC_HOST}/api/frame`,
-    "fc:frame:aspects": "1.91:1",
-    "fc:frame:image:aspect_ratio": "1.91:1"
+    "fc:frame:image:aspect_ratio": "1.91:1",
+    "fc:frame:version": "vNext"
   },
 };
 
