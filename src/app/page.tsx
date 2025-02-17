@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hello World Frame",
     description: "A simple Farcaster Frame example",
-    images: [`${process.env.NEXT_PUBLIC_HOST}/api/og`],
+    images: [`${process.env.NEXT_PUBLIC_HOST}/api/og`], // Fixed image URL
   },
   other: {
     "fc:frame": "vNext",
@@ -26,4 +26,4 @@ export default function Home() {
       <h1>Hello World Farcaster Frame</h1>
     </main>
   );
-} 
+}
