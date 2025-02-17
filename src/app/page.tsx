@@ -22,18 +22,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      {/* Frame Meta Tags */}
-      <head>
-        <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content={`${process.env.NEXT_PUBLIC_HOST}/api/og`} />
-        <meta property="fc:frame:button:1" content="Say Hello" />
-        <meta property="fc:frame:button:1:action" content="post" />
-        <meta property="fc:frame:post_url" content={`${process.env.NEXT_PUBLIC_HOST}/api/frame`} />
-      </head>
-      <main className="flex min-h-screen flex-col items-center justify-center p-24">
-        <h1>Hello World Farcaster Frame</h1>
-      </main>
-    </>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <h1>Hello World Farcaster Frame</h1>
+    </main>
   );
 }
