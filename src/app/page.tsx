@@ -12,18 +12,17 @@ export const metadata: Metadata = {
     images: [`${process.env.NEXT_PUBLIC_HOST}/api/og`], // Fixed image URL
   },
   other: {
-    // Single fc:frame meta tag with stringified FrameEmbed JSON
-    "fc:frame": JSON.stringify({
-      version: "vNext",
-      imageUrl: `${process.env.NEXT_PUBLIC_HOST}/api/og`,
-      button: {
-        title: "Say Hello",
-        action: {
-          type: "post",
-          url: `${process.env.NEXT_PUBLIC_HOST}/api/frame`
-        }
-      }
-    })
+    // Frame version
+    "fc:frame": "vNext",
+    // Image URL
+    "fc:frame:image": `${process.env.NEXT_PUBLIC_HOST}/api/og`,
+    // Image aspect ratio
+    "fc:frame:image:aspect_ratio": "1.91:1",
+    // Button properties
+    "fc:frame:button:1": "Say Hello",
+    "fc:frame:button:1:action": "post",
+    // Post URL
+    "fc:frame:post_url": `${process.env.NEXT_PUBLIC_HOST}/api/frame`,
   },
 };
 
