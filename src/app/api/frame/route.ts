@@ -14,6 +14,10 @@ const FrameMessageSchema = z.object({
   }).optional(), // Make trustedData optional for testing
 });
 
+// Export route configuration
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
+
 /**
  * Handles POST requests for Frame interactions
  */
@@ -57,7 +61,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 }
 
-// Add GET handler for testing
-export async function GET() {
-  return NextResponse.json({ status: "Frame endpoint is working" });
+/**
+ * Handles GET requests for testing
+ */
+export async function GET(): Promise<NextResponse> {
+  return NextResponse.json({
+    status: "Frame endpoint is working",
+    timestamp: new Date().toISOString(),
+  });
 } 
