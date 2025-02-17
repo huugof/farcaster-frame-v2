@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { FrameMetadata } from "@/types/frame";
 
 /**
- * Metadata for the Frame, including Open Graph tags
+ * Metadata for the Frame, including Open Graph and Frame-specific tags
  */
 export const metadata: Metadata = {
   title: "Hello World Frame",
@@ -11,6 +11,16 @@ export const metadata: Metadata = {
     title: "Hello World Frame",
     description: "A simple Farcaster Frame example",
     images: [`${process.env.NEXT_PUBLIC_HOST}/api/frame`],
+  },
+  other: {
+    "fc:frame": "vNext",
+    "fc:frame:image": `${process.env.NEXT_PUBLIC_HOST}/api/og`,
+    "fc:frame:button:1": "Say Hello",
+    "fc:frame:button:1:action": "post",
+    "fc:frame:button:2": "Visit Website",
+    "fc:frame:button:2:action": "link",
+    "fc:frame:button:2:target": "https://farcaster.xyz",
+    "fc:frame:post_url": `${process.env.NEXT_PUBLIC_HOST}/api/frame`,
   },
 };
 
@@ -38,12 +48,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <h1>Hello World Farcaster Frame</h1>
-      {/* Frame Meta Tags */}
-      <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content={frameMetadata.image} />
-      <meta property="fc:frame:button:1" content={frameMetadata.buttons[0].label} />
-      <meta property="fc:frame:button:2" content={frameMetadata.buttons[1].label} />
-      <meta property="fc:frame:post_url" content={frameMetadata.postUrl} />
     </main>
   );
 } 
